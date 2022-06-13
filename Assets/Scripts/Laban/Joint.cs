@@ -42,5 +42,23 @@ namespace EI_MiniProject
             previousVelocity = Velocity;
             prevAcceleration = Acceleration;
         }
+
+        //public void CalculatePositionDerivatives(Vector3 currentPosition)
+        //{
+        //    Position = currentPosition;
+
+        //    Velocity = (Position - previousPosition) / (2 * Time.fixedDeltaTime);
+        //    Acceleration = (Position + Velocity - (2 * Position) + previousPosition) / Mathf.Pow(Time.fixedDeltaTime, 2);
+        //    Jerk = (Position + 2 * Velocity) - 2 * (Position + Velocity) + 2 * (previousPosition) - (previousPosition - previousVelocity) / (2 * Mathf.Pow(Time.fixedDeltaTime, 3));
+
+        //    previousPosition = Position;
+        //    previousVelocity = Velocity;
+        //}
     }
 }
+
+// Simplified calculations:
+//Velocity = (Position - previousPosition) / 2 * Time.fixedDeltaTime;
+//Acceleration = (Velocity - previousVelocity) / Time.fixedDeltaTime;
+//Jerk = (Acceleration - prevAcceleration) / Time.fixedDeltaTime;
+//prevAcceleration = Acceleration;

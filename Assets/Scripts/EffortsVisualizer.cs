@@ -63,8 +63,8 @@ namespace EI_MiniProject
         #region Properties
 
         private Color Color => Color.Lerp(Color.green, Color.red, Mathf.InverseLerp(flowMin, flowMax, Joint.FlowEffort));
-        private float DistanceBetweenPoints => Mathf.Clamp((1f - Mathf.InverseLerp(timeMin, timeMax, Joint.TimeEffort)) * 0.05f, 0.01f, Mathf.Infinity);
-        //private float DistanceBetweenPoints => Mathf.InverseLerp(timeMax, timeMin, Joint.TimeEffort) * 0.1f;
+        //private float DistanceBetweenPoints => Mathf.Clamp((1f - Mathf.InverseLerp(timeMin, timeMax, Joint.TimeEffort)) * 0.05f, 0.01f, Mathf.Infinity);
+        private float DistanceBetweenPoints => Mathf.InverseLerp(timeMax, timeMin, Joint.TimeEffort) * 0.1f;
         private float Width => Mathf.InverseLerp(weightMin, weightMax, Joint.WeightEffort);
         private Vector3 LastLinePoint => lineRenderer.GetPosition(lineRenderer.positionCount - 1);
 
